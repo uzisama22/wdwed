@@ -1,0 +1,12 @@
+
+-- list of player allowed, if you want add more just add this "," and press enter and write another username.
+local AllowedUsers = { 
+ ""
+}
+
+-- when player join
+game.Players.PlayerAdded:Connect(function(Player)
+ if not table.find(AllowedUsers, Player.Name) then -- if he is not whitelisted then, if his username is not found in the table AllowedUsers then
+  Player:Kick("You're not allowed to get in!") -- it kick his with the reason "You're not allowed to get in!".
+ end
+end)
